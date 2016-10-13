@@ -1,0 +1,32 @@
+<%include ../components/header.ejs%>
+    
+    <h2>Yey we have a token!</h2>
+    <% if (body.orcid) { %>
+       The user was sent to the authorization URL. After the user authorizes the
+       requested scopes for the client applications the user is redirected back
+       to the client application with an authorize code in the URL parameters.
+       Finally the client application supplies the authorization code, client id
+       and client secret to the authorization server and receives a token.
+    <% }  else { %>
+       The client requested a two step token by supplying a client id
+       and client secret.
+    <% } %>
+	<h2>Token:</h2>
+	<pre><%= JSON.stringify(body, null, 2) %></pre>
+	<br />
+	<strong>This token JSON provides the following:</strong>
+	<ol>
+	   <% if (body.orcid) { %>
+          <li><strong>Authenticated ORCID iD</strong> which we can read from token > orcid.</li>
+       <% } %>
+       <li><strong>Access token</strong></li>
+       <li><strong>Scopes</strong>,  This tells us what permission scopes 
+       the token has.</li>
+       <li><strong>expires_in</strong> seconds until token expires</li>
+       <li><strong>expires_at</strong> date when toke expires</li>
+       <li><strong>token_type</strong> token type</li>
+    </ol>
+    <br />
+	<a class="btn btn-default" href="/">Try again</a>
+	<br />    
+<%include ../components/footer.ejs%>
