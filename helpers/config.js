@@ -1,10 +1,13 @@
 module.exports = config = {
   // Config for OAuth2 
-  CLIENT_ID: 'APP-O9TUKAPVLALU1SOJ',
-  CLIENT_SECRET: '0eafb938-020e-45a6-a148-3c222171d9d8',
+  CLIENT_ID_01: 'APP-B9T4095P7U7W76X5',
+  CLIENT_SECRET_01: 'f6677b74-8f3f-4204-ad7d-55e449eac609',
+  CLIENT_ID_02: 'APP-OP444XZBA4ZS2JRH',
+  CLIENT_SECRET_02: 'a389d518-4964-4a1f-be1b-b38e08a7c963',
   AUTHORIZE_URI: 'https://sandbox.orcid.org/oauth/authorize',
   TOKEN_EXCHANGE_URI: 'https://api.sandbox.orcid.org/oauth/token',
-  CODE_CALLBACK_URI: 'http://localhost:8000/authorization-code-callback',
+  CODE_CALLBACK_URI_01: 'http://localhost:8000/authorization-code-callback_01',
+  CODE_CALLBACK_URI_02: 'http://localhost:8000/authorization-code-callback_02',
   // General server config
   PORT: '8000',
   SERVER_IP: '127.0.0.1',
