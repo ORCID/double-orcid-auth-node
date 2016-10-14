@@ -5,6 +5,7 @@ var express = require('express'),
   querystring = require("querystring"),
   fs = require('fs'),
   https = require('https'),
+  session = require('express-session'),
   request = require('request');
 
 var ssl_options = {
@@ -16,6 +17,12 @@ var ssl_options = {
 var app = express();
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
+app.use(session({  
+    secret: "notagoodsecretnoreallydontusethisone",  
+    resave: false,
+    saveUninitialized: true,
+    cookie: {httpOnly: true, secure: true},  
+}));
 secureServer = https.createServer(ssl_options, app);
 secureServer.listen(config.PORT, config.SERVER_IP, function () { // Start express
   console.log('server started on ' + config.PORT);
@@ -30,7 +37,15 @@ app.get('/', function(req, res) { // Index page
     'response_type':'code',
     'client_id': config.CLIENT_ID
   });
+  // reset any session on reload of '/'
+  req.session.regenerate(function(err) {
+      // nothing to do
+  });
   res.render('pages/index', {'authorization_uri': auth_link});
+});
+
+app.get('/orcid-id.json', function(req, res) {
+  res.json({'orcid_id': req.session.orcid_id});
 });
 
 app.get('/authorization-code-callback', function(req, res) { // Redeem code URL
@@ -42,9 +57,12 @@ app.get('/authorization-code-callback', function(req, res) { // Redeem code URL
 
     // function to render page after making request
     var exchangingCallback = function(error, response, body) {
-    if (error == null) // No errors! we have a token :-)
+    if (error == null) { // No errors! we have a token :-)
+      var tokenJson = JSON.parse(body);
+      console.log(tokenJson);
+      req.session.orcid_id = tokenJson.orcid;
       res.render('pages/success', { 'body': JSON.parse(body) });
-    else // handle error
+    } else // handle error
       res.render('pages/error', { 'error': error });
     };
 

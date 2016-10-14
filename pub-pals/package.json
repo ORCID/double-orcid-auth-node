@@ -7,6 +7,7 @@
     "ejs": "^1.0.0",
     "global-request-logger": "^0.0.1",
     "express": "^4.12.4",
+    "express-session": "^1.14.1",
     "request": "^2.57.0"
   },
   "repository": {
