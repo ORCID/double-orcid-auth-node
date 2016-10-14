@@ -66,5 +66,6 @@ The following configuration keys can be overwritten by setting
 
        node client-app.js
 
-### 8. Open localhost [http://localhost:8000/](http://localhost:8000/)
-You should have the a sample client application running on your local machine!
+### 8. Open localhost [https://localhost:8443/](https://localhost:8443/)
+Since this is a demo app on localhost you'll get an invalid certificate message. After accepting the invalid certificate you should have the a sample client application running on your local machine!
+

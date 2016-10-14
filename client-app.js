@@ -1,13 +1,24 @@
 var express = require('express'), 
+  // load config from file
   config = require('./helpers/config'),
   httpLogging = require('./helpers/http-logging'),
   querystring = require("querystring"),
+  fs = require('fs'),
+  https = require('https'),
+  forceSSL = require('express-force-ssl'),
   request = require('request');
-  
-var app = express(); // Init express
+
+var ssl_options = {
+  key: fs.readFileSync('./helpers/sample_server.key'),
+  cert: fs.readFileSync('./helpers/sample_server.cert'),
+};
+
+// Init express
+var app = express();
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
-app.listen(config.PORT, config.SERVER_IP, function () { // Start express
+secureServer = https.createServer(ssl_options, app);
+secureServer.listen(config.PORT, config.SERVER_IP, function () { // Start express
   console.log('server started on ' + config.PORT);
 });
 
