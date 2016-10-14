@@ -5,7 +5,6 @@ var express = require('express'),
   querystring = require("querystring"),
   fs = require('fs'),
   https = require('https'),
-  forceSSL = require('express-force-ssl'),
   request = require('request');
 
 var ssl_options = {
