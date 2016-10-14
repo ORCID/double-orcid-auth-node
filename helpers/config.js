@@ -6,10 +6,10 @@ module.exports = config = {
   CLIENT_SECRET_02: 'a389d518-4964-4a1f-be1b-b38e08a7c963',
   AUTHORIZE_URI: 'https://sandbox.orcid.org/oauth/authorize',
   TOKEN_EXCHANGE_URI: 'https://api.sandbox.orcid.org/oauth/token',
-  CODE_CALLBACK_URI_01: 'http://localhost:8000/authorization-code-callback_01',
-  CODE_CALLBACK_URI_02: 'http://localhost:8000/authorization-code-callback_02',
+  CODE_CALLBACK_URI_01: 'https://localhost:8443/authorization-code-callback_01',
+  CODE_CALLBACK_URI_02: 'https://localhost:8443/authorization-code-callback_02',
   // General server config
-  PORT: '8000',
+  PORT: '8443',
   SERVER_IP: '127.0.0.1',
 }
 
