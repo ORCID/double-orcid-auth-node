@@ -1,0 +1,20 @@
+<%include ../components/header.ejs%>
+<div class="alert alert-warning">
+    <p>
+    This sample sandbox client application demonstrates a simple client application interacting with <a href="http://members.orcid.org/api/oauth2">ORCID OAuth2</a> service. For a comprehensive overview visit <a href="http://members.orcid.org/api" target="member_api">http://members.orcid.org/api</a>.
+    </p>
+</div>
+<div class="jumbotron">
+    <h3>Welcome to the DOI Dudes ORCID Updater!</h3>
+    <p>
+    <a href="https://orcid.org/about" target="_blank">ORCID</a> provides a persistent digital identifier that distinguishes you from other researchers. Many publishers use ORCID iDs to make sure that all publications you submit are correctly attributed to you, and not to another author with a simliar name. 
+    </p>
+    <p>
+    DOI Dudes works with publishers to automatically add new publications to your ORCID record. To do this, we first need permission from you to edit your ORCID record. You will only need to complete this step once, and we will update your ORCID record any time we generate a DOI for a publication that includes your ORCID iD (until you revoke permission).
+
+    <p>
+    Click the button below to give DOI Dudes permission to update your ORCID record. 
+    </p>
+    <p><a class="btn btn-primary" href="<%= authorization_uri %>">Yes, update my ORCID record automatically!</a></p>
+</div>
+ <%include ../components/footer.ejs%>
