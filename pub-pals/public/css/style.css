@@ -1,48 +1,43 @@
 body {
-        padding-top: 20px;
-        padding-bottom: 40px;
-      }
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
 
-      /* Custom container */
-      .container-narrow {
-        margin: 0 auto;
-        padding: 0 1em;
-        max-width: 700px;
-      }
-      .container-narrow > hr {
-        margin: 30px 0;
-      }
-
-      /* Main marketing message and sign up button */
-      .jumbotron {
-        text-align: center;
-        padding: 2em 2em;
-      }
-      .jumbotron h1 {
-        font-size: 72px;
-        line-height: 1;
-      }
-      .jumbotron p {
-        font-size: 1.2em;
-      }
-      .jumbotron .btn {
-        //font-size: 1.4em;
-        padding: 1em 2em;
-      }
-
-      /* Supporting marketing content */
-      .marketing {
-        margin: 60px 0;
-      }
-      .marketing p + h4 {
-        margin-top: 28px;
-      }
-
-      /* ORCID iD form field */
-      .form-group .col-xs-4{
-        padding-left: 0;
-      }
-
-      a {
-        cursor: pointer;
-      }
+a {
+  cursor: pointer;
+}
+/* Custom container */
+.container-narrow {
+  margin: 0 auto;
+  padding: 0 1em;
+  max-width: 700px;
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+/* Main message*/
+.jumbotron {
+  text-align: center;
+  padding: 2em 2em;
+}
+.jumbotron h1 {
+  font-size: 72px;
+  line-height: 1;
+}
+.jumbotron p {
+  font-size: 1.2em;
+}
+.jumbotron .btn {
+  //font-size: 1.4em;
+  padding: 1em 2em;
+}
+/* ORCID iD form field */
+.form-group .col-xs-6{
+  padding-left: 0;
+}
+/*ORCID info text*/
+.alert-info-gray{
+  background-color: #eee;
+  border-color: #ccc;
+  color: #555;
+}
