@@ -6,6 +6,7 @@ body {
       /* Custom container */
       .container-narrow {
         margin: 0 auto;
+        padding: 0 1em;
         max-width: 700px;
       }
       .container-narrow > hr {
