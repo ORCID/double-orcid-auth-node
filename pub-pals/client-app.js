@@ -32,10 +32,10 @@ app.get('/', function(req, res) { // Index page
   // link we send user to authorize our requested scopes
   var auth_link = config.AUTHORIZE_URI + '?'
    + querystring.stringify({
-    'redirect_uri': config.CODE_CALLBACK_URI,
+    'redirect_uri': config.PUBPALS_CODE_CALLBACK_URI,
     'scope': '/authenticate /activities/update',
     'response_type':'code',
-    'client_id': config.CLIENT_ID
+    'client_id': config.PUBPALS_CLIENT_ID
   });
   // reset any session on reload of '/'
   req.session.regenerate(function(err) {
@@ -58,10 +58,17 @@ app.get('/authorization-code-callback', function(req, res) { // Redeem code URL
     // function to render page after making request
     var exchangingCallback = function(error, response, body) {
     if (error == null) { // No errors! we have a token :-)
+      var auth_link = config.AUTHORIZE_URI + '?'
+   + querystring.stringify({
+    'redirect_uri': config.DOIDUDES_CODE_CALLBACK_URI,
+    'scope': '/authenticate /activities/update',
+    'response_type':'code',
+    'client_id': config.DOIDUDES_CLIENT_ID
+  });
       var tokenJson = JSON.parse(body);
       console.log(tokenJson);
       req.session.orcid_id = tokenJson.orcid;
-      res.render('pages/success', { 'body': JSON.parse(body) });
+      res.render('pages/success', { 'body': JSON.parse(body), 'authorization_uri': auth_link });
     } else // handle error
       res.render('pages/error', { 'error': error });
     };
