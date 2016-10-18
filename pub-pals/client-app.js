@@ -79,7 +79,7 @@ app.get('/authorization-code-callback', function(req, res) { // Redeem code URL
       method: 'post',
       body: querystring.stringify({
         'code': req.query.code,
-        'client_id': config.CLIENT_ID,
+        'client_id': config.PUBPALS_CLIENT_ID,
         'client_secret': config.CLIENT_SECRET,
         'grant_type': 'authorization_code',
       }),

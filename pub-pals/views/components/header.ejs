@@ -21,7 +21,7 @@
                     url: '/orcid-id.json',
                     success: function(data) {
                     	if (data.orcid_id)
-                    		alert("your turn liz + " + data.orcid_id)
+                        $('input[name="orcidId"]').val(data.orcid_id);
                     	else
                     		setTimeout(hasOrcid, 300);
                     }
