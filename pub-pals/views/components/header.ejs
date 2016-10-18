@@ -32,7 +32,7 @@
         <script type=text/javascript>
           var oauthWindow;
           function openOauth() {
-            var oauthWindow = window.open("<%= authorization_uri %>", "_blank", "toolbar=no, scrollbars=yes, width=500, height=600, top=500, left=500");
+            var oauthWindow = window.open("<%- authorization_uri %>", "_blank", "toolbar=no, scrollbars=yes, width=500, height=600, top=500, left=500");
           }
         </script>
 	</head>
