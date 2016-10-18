@@ -41,3 +41,7 @@ body {
       .form-group .col-xs-4{
         padding-left: 0;
       }
+
+      a {
+        cursor: pointer;
+      }

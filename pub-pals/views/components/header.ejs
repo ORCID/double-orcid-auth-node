@@ -30,30 +30,35 @@
             hasOrcid();
         </script>
         <script type=text/javascript>
-          var oauthWindow;
-          function openOauth() {
-            //get first name, last name and email from form input
-            if($('#inputFirstName').val().length > 0){
-              var firstName = $('#inputFirstName').val();
-            } else {
-              var firstName='';
-            }
-            if($('#inputLastName').val().length > 0){
-              var lastName = $('#inputLastName').val();
-            } else {
-              var lastName='';
-            }
-            if($('#inputEmail').val().length > 0){
-              var email = $('#inputEmail').val();
-            } else {
-              var email='';
-            }
-            //add names and email to authorization url (prefill oauth signin/register form)
-            var url = "<%- authorization_uri %>" + "&family_names=" + lastName + "&given_names=" + firstName + "&email=" + email;
-            //open oauth window in popup
-            var oauthWindow = window.open(url, "_blank", "toolbar=no, scrollbars=yes, width=500, height=600, top=500, left=500");
-            setTimeout(function () { oauthWindow.close();}, 8000);
-          }
+          $(document).ready(function(){
+            $("#oauth").click(function(){
+                //get first name, last name and email from form input
+                if($('#inputFirstName').val().length > 0){
+                  var firstName = $('#inputFirstName').val();
+                } else {
+                  var firstName='';
+                }
+                if($('#inputLastName').val().length > 0){
+                  var lastName = $('#inputLastName').val();
+                } else {
+                  var lastName='';
+                }
+                if($('#inputEmail').val().length > 0){
+                  var email = $('#inputEmail').val();
+                } else {
+                  var email='';
+                }
+                //add names and email to authorization url (prefill oauth signin/register form)
+                var url = "<%- authorization_uri %>" + "&family_names=" + lastName + "&given_names=" + firstName + "&email=" + email;
+                //open oauth window in popup
+                var oauthWindow = window.open(url, "_blank", "toolbar=no, scrollbars=yes, width=500, height=600, top=500, left=500");
+                setTimeout(function () { oauthWindow.close();}, 16000);
+              });
+              
+              $("#close").click(function(){
+                window.close();
+              });
+          });
         </script>
 	</head>
   	<body>
