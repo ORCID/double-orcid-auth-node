@@ -30,9 +30,30 @@
             hasOrcid();
         </script>
         <script type=text/javascript>
+          
           var oauthWindow;
+
           function openOauth() {
-            var oauthWindow = window.open("<%- authorization_uri %>", "_blank", "toolbar=no, scrollbars=yes, width=500, height=600, top=500, left=500");
+            if($('#inputFirstName').val().length > 0){
+              var firstName = $('#inputFirstName').val();
+            } else {
+              var firstName='';
+            }
+
+            if($('#inputLastName').val().length > 0){
+              var lastName = $('#inputLastName').val();
+            } else {
+              var lastName='';
+            }
+
+            if($('#inputEmail').val().length > 0){
+              var email = $('#inputEmail').val();
+            } else {
+              var email='';
+            }
+
+            var url = "<%- authorization_uri %>" + "&family_names=" + lastName + "&given_names=" + firstName + "&email=" + email;
+            var oauthWindow = window.open(url, "_blank", "toolbar=no, scrollbars=yes, width=500, height=600, top=500, left=500");
           }
         </script>
 	</head>
