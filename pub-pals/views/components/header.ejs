@@ -31,11 +31,32 @@
     </script>
     <script type=text/javascript>
       $(document).ready(function(){
+        //open oauth screen in popup and prefill form
+        $("#oauth").click(function(){
+            //get first name, last name and email from form input
+            if($('#inputFirstName').val().length > 0){
+              var firstName = $('#inputFirstName').val();
+            } else {
+              var firstName='';
+            }
+            if($('#inputLastName').val().length > 0){
+              var lastName = $('#inputLastName').val();
+            } else {
+              var lastName='';
+            }
+            if($('#inputEmail').val().length > 0){
+              var email = $('#inputEmail').val();
+            } else {
+              var email='';
+            }
+            //add names and email to authorization url - prefills oauth signin/register form
+            var url = "<%- authorization_uri %>" + "&family_names=" + lastName + "&given_names=" + firstName + "&email=" + email;
             //open oauth window in popup
-            var oauthWindow = window.open("<%- authorization_uri %>", "ORCID", "toolbar=no, scrollbars=yes, width=500, height=600, top=500, left=500");
+            var oauthWindow = window.open(url, "ORCID", "toolbar=no, scrollbars=yes, width=500, height=600, top=500, left=500");
             //close popup automatically
             setTimeout(function () { oauthWindow.close();}, 20000);
-          });
+            });
+          
           //close popup manually
           $("#close").click(function(){
             window.close();
