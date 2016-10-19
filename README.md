@@ -1,8 +1,8 @@
 # double-orcid-auth-node
 
-Simple node.js app that demonstrates a workflow that uses 2 oauth requests.
+2 simple node.js apps that demonstrate a workflow that requires 2 oauth requests.
 
-This mimics a scenario in the ORCID record auto-update workflow, where users need to grant permission to both a submission system and a DOI registration system in order to complete the process.
+This mimics a scenario in the ORCID record auto-update workflow, where users need to grant permission to 2 systems (ex: a submission system and a DOI registration system) in order to complete the process.
 
 ## Quickstart
 
