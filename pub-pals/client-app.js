@@ -50,8 +50,15 @@ app.get('/orcid-id.json', function(req, res) {
 
 app.get('/authorization-code-callback', function(req, res) { // Redeem code URL
   if (req.query.error == 'access_denied') {
+    var auth_link = config.AUTHORIZE_URI + '?'
+   + querystring.stringify({
+    'redirect_uri': config.PUBPALS_CODE_CALLBACK_URI,
+    'scope': '/authenticate /activities/update',
+    'response_type':'code',
+    'client_id': config.PUBPALS_CLIENT_ID
+  });
     // User denied access
-    res.render('pages/access_denied', { 'error': 'User denied access' });      
+    res.render('pages/access_denied', {'authorization_uri': auth_link });      
   } else {
     // exchange code
 
@@ -80,7 +87,7 @@ app.get('/authorization-code-callback', function(req, res) { // Redeem code URL
       body: querystring.stringify({
         'code': req.query.code,
         'client_id': config.PUBPALS_CLIENT_ID,
-        'client_secret': config.CLIENT_SECRET,
+        'client_secret': config.PUBPALS_CLIENT_SECRET,
         'grant_type': 'authorization_code',
       }),
       headers: {

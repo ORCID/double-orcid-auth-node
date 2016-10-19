@@ -25,25 +25,32 @@ app.get('/', function(req, res) { // Index page
   // link we send user to authorize our requested scopes
   var auth_link = config.AUTHORIZE_URI + '?'
    + querystring.stringify({
-    'redirect_uri': config.CODE_CALLBACK_URI,
+    'redirect_uri': config.DOIDUDES_CODE_CALLBACK_URI,
     'scope': '/authenticate /activities/update',
     'response_type':'code',
-    'client_id': config.CLIENT_ID
+    'client_id': config.DOIDUDES_CLIENT_ID
   });
   res.render('pages/index', {'authorization_uri': auth_link});
 });
 
 app.get('/authorization-code-callback', function(req, res) { // Redeem code URL
+  var auth_link = config.AUTHORIZE_URI + '?'
+   + querystring.stringify({
+    'redirect_uri': config.CALLBACK_URI,
+    'scope': '/authenticate /activities/update',
+    'response_type':'code',
+    'client_id': config.DOIDUDES_CLIENT_ID
+  });
   if (req.query.error == 'access_denied') {
     // User denied access
-    res.render('pages/access_denied', { 'error': 'User denied access' });      
+    res.render('pages/access_denied', {'authorization_uri': auth_link });     
   } else {
     // exchange code
 
     // function to render page after making request
     var exchangingCallback = function(error, response, body) {
     if (error == null) // No errors! we have a token :-)
-      res.render('pages/success', { 'body': JSON.parse(body) });
+      res.render('pages/success', { 'body': JSON.parse(body), 'authorization_uri': auth_link });
     else // handle error
       res.render('pages/error', { 'error': error });
     };
@@ -54,8 +61,8 @@ app.get('/authorization-code-callback', function(req, res) { // Redeem code URL
       method: 'post',
       body: querystring.stringify({
         'code': req.query.code,
-        'client_id': config.CLIENT_ID,
-        'client_secret': config.CLIENT_SECRET,
+        'client_id': config.DOIDUDES_CLIENT_ID,
+        'client_secret': config.DOIDUDES_CLIENT_SECRET,
         'grant_type': 'authorization_code',
       }),
       headers: {
