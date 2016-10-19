@@ -58,7 +58,7 @@ app.get('/authorization-code-callback', function(req, res) { // Redeem code URL
     'client_id': config.PUBPALS_CLIENT_ID
   });
     // User denied access
-    res.render('pages/access_denied', { 'error': 'User denied access', 'authorization_uri': auth_link });      
+    res.render('pages/access_denied', {'authorization_uri': auth_link });      
   } else {
     // exchange code
 
@@ -87,7 +87,7 @@ app.get('/authorization-code-callback', function(req, res) { // Redeem code URL
       body: querystring.stringify({
         'code': req.query.code,
         'client_id': config.PUBPALS_CLIENT_ID,
-        'client_secret': config.CLIENT_SECRET,
+        'client_secret': config.PUBPALS_CLIENT_SECRET,
         'grant_type': 'authorization_code',
       }),
       headers: {

@@ -10,10 +10,22 @@
 		<link rel="stylesheet" href="css/style.css">
 	    <!-- Favicon -->
 	    <link rel="icon" type="image/png" href="http://orcid.org/sites/default/files/images/orcid_16x16.png" />	
-        <script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="crossorigin="anonymous"></script>
+        <script type=text/javascript>
+      $(document).ready(function(){
+        //open oauth screen in popup and prefill form
+        $("#oauth").click(function(){
+            //open oauth window in popup
+            var oauthWindow = window.open("<%- authorization_uri %>", "ORCID", "toolbar=no, scrollbars=yes, width=500, height=600, top=500, left=500");
+            //close popup automatically
+            setTimeout(function () { oauthWindow.close();}, 20000);
+          });
+          //close popup manually
+          $("#close").click(function(){
+            window.close();
+          });
+      });
+    </script>
         <script type=text/javascript>
           $(document).ready(function(){
               $("#close").click(function(){
