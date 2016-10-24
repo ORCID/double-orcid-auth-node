@@ -37,12 +37,12 @@ Depending on how you downloaded and unzipped the project.
 
 * **Windows**
 
-        cd Downloads/double-orcid-auth-node-master/double-orcid-auth-node-master/pubpals
+        cd Downloads/double-orcid-auth-node-master/double-orcid-auth-node-master/pub-pals
 
 * **OSX**
  
 
-        cd Downloads/double-orcid-auth-node-master/pubpals
+        cd Downloads/double-orcid-auth-node-master/pub-pals
 
 
 ### 5. Install client app node dependencies
@@ -51,18 +51,23 @@ Depending on how you downloaded and unzipped the project.
 
 ### 6. (OPTIONAL) Configure credentials. 
 
-This example is configured with default test credentials. You can optionally request your own 
-sandbox credentials: 
+This example is configured with default test credentials on the ORCID Sandbox. You can optionally supply your own  
+sandbox credentials or other [environment variables](http://en.wikipedia.org/wiki/Environment_variable). The DOI Dudes authorization is launched from the redirect URI, if you are testing with your own credentials, we suggest adding https://localhost as a redirect URI to the credentials and using the default URI. You can register for sandbox credentials at:
 [http://orcid.org/content/register-client-application](http://orcid.org/content/register-client-application). 
-The following configuration keys can be overwritten by setting 
-[environment variables](http://en.wikipedia.org/wiki/Environment_variable):
+
+The following configuration keys can be set when starting the client application:
 
 * PUBPALS_CLIENT_ID - Client id issued by ORCID.
 * DOIDUDES_CLIENT_ID - Client id issued by ORCID.
-* CLIENT_SECRET - Client secret issued by ORCID
+* PUBPALS_CLIENT_SECRET - Client secret issued by ORCID
+* DOIDUDES_CLIENT_SECRET - Client secret issued by ORCID
+* PUBPALS_CODE_CALLBACK_URI - Link user is sent back to with OAuth2 authorization code.
+* DOIDUDES_CODE_CALLBACK_URI - Link user is sent back to with OAuth2 authorization code.
 * AUTHORIZE_URI - https://sandbox.orcid.org or https://orcid.org
-* TOKEN_PATH - https://api.sandbox.orcid.org/oauth/token, https://pub.sandbox.orcid.org/oauth/token,
-* CODE_CALLBACK_URI - Link use is sent back to with OAuth2 authorization code.
+* TOKEN_PATH - https://sandbox.orcid.org/oauth/token or https://orcid.org/oauth/token
+
+An example to start the the application with individual sandbox credentials for the first authorization:
+		PUBPALS_CLIENT_ID=APP-674MCQQR985VZZQX PUBPALS_CLIENT_SECRET=d08b711e-9411-488d-a474-46efd395884X node client-app.js
 
 
 ### 7. Start pubpals client application.
@@ -80,12 +85,12 @@ Depending on how you downloaded and unzipped the project.
 
 * **Windows**
 
-        cd Downloads/double-orcid-auth-node-master/double-orcid-auth-node-master/doidudes
+        cd Downloads/double-orcid-auth-node-master/double-orcid-auth-node-master/doi-dudes
 
 * **OSX**
  
 
-        cd Downloads/double-orcid-auth-node-master/doidudes
+        cd Downloads/double-orcid-auth-node-master/doi-dudes
 
 ### 10. Install client app node dependencies
 
