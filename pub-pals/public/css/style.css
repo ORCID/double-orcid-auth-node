@@ -1,6 +1,5 @@
 body {
-  padding-top: 20px;
-  padding-bottom: 40px;
+  background: #000;
 }
 
 a {
@@ -8,12 +7,13 @@ a {
 }
 /* Custom container */
 .container-narrow {
-  margin: 0 auto;
-  padding: 0 1em;
+  margin: auto;
+  padding: 2em;
   max-width: 700px;
+  background: #fff;
 }
 .container-narrow > hr {
-  margin: 30px 0;
+  margin: .5em 0 2em 0;
 }
 /* Main message*/
 .jumbotron {
@@ -28,7 +28,6 @@ a {
   font-size: 1.2em;
 }
 .jumbotron .btn {
-  //font-size: 1.4em;
   padding: 1em 2em;
 }
 /* ORCID iD form field */
@@ -41,3 +40,17 @@ a {
   border-color: #ccc;
   color: #555;
 }
+
+.nav li a{
+  color: #000;
+}
+
+.nav li.active a, .nav li.active a:hover, .btn-primary, .btn-primary:hover{
+  background-color: #930f7a;
+  border-color: #930f7a;
+}
+
+ul.nav{
+  margin-top: 2em;
+}
+
