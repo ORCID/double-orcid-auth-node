@@ -5,7 +5,7 @@ This repository consists of 2 simple node.js apps that demonstrate a workflow th
 ## Demo the Double OAuth Request
 
 ###1. Go the start page of the first system
-In this demo the start page is a mock manuscript submission form for Pub Pals located at [localhost](https://localhost:8443/).
+In this demo the start page is a mock manuscript submission form for Publisher Pals located at [localhost](https://localhost:8443/).
 
 ![localhost submission screen](/readme_images/submission_form.png "local host submission")
 
@@ -15,17 +15,17 @@ In this demo the start page is a mock manuscript submission form for Pub Pals lo
 ![text fields](/readme_images/author_fields.png "Add author name and email address")
 
 ###3. Click the "Create or Connect your ORCID iD" button
-This will open a pop-up with the ORCID Authorization screen where you can grant access to Pub Pals. (Any information you provided in step 2 will be used to fill the registration form).
+This will open a pop-up with the ORCID Authorization screen where you can grant access to Publisher Pals. (Any information you provided in step 2 will be used to fill the registration form).
 
 ![Granting permission to Pub Pals](/readme_images/pubpals_permission.png "Grant permission to Pubpals")
 
-###4. Grant Permission to Pub Pals
-In the pop-up, sign up for a new sandbox account, or sign into an exiting one, and grant Pub Pals access to your ORCID record. When you click Authorize, Pub Pals will get your ORCID iD and permission to create and update activities on your ORCID record.
+###4. Grant Permission to Publisher Pals
+In the pop-up, sign up for a new sandbox account, or sign into an exiting one, and grant Publisher Pals access to your ORCID record. When you click Authorize, Publisher Pals will get your ORCID iD and permission to create and update activities on your ORCID record.
 
 ![Click Authorize](/readme_images/authorize.png "Click authorize")
 
-###5. Return to the Pub Pals redirect URI
-After granting access to Pub Pals, you'll be taken to Pub Pals redirect URI. This page includes a link to authorize a connection with DOI Dudes.
+###5. Return to the Publisher Pals redirect URI
+After granting access to Publisher Pals, you'll be taken to Publisher Pals redirect URI. This page includes a link to authorize a connection with DOI Dudes.
 
 ![Screen after granting permission to Pub Pals](/readme_images/pubpals_redirect.png "Redirect back to Pub Pals")
 
@@ -38,7 +38,7 @@ Click the "Yes, grant permission take me to DOI Dudes" button. You'll be taken t
 ###7. Grant permission to DOI Dudes
 When you click Authorize, DOI Dudes will get your ORCID iD and permission to create and update activities on your ORCID record.
 
-![Click Authorize](/readme_images/authorize.png "Click authorize")
+![Click Authorize](/readme_images/doidudes_authorize.png "Click authorize")
 
 ###8. Return to the DOI Dudes redirect
 
@@ -48,13 +48,13 @@ After granting access to DOI Dudes you will be taken to the DOI Dudes redirect U
 
 ###9. Click on the Close Window button. 
 
-You will return to the Pub Pals submission form, now complete with your ORCID iD which they captured in step 4. 
+You will return to the Publisher Pals submission form, now complete with your ORCID iD which they captured in step 4. 
 
 ![Completed submission form](/readme_images/pubpals_complete.png "Completed Pub Pals submission form")
 
 ###10. Complete the submission process
 
-Now both Pub Pals and DOI Dudes have access to your ORCID iD. Pub Pals used this access immediately to include your ORCID iD with the submission and DOI Dudes will use it to post the work to your ORCID record once it is published. Click the Submit button to reset the form and test again. 
+Now both Publisher Pals and DOI Dudes have access to your ORCID iD. Publisher Pals used this access immediately to include your ORCID iD with the submission and DOI Dudes will use it to post the work to your ORCID record once it is published. Click the Submit button to reset the form and test again. 
 
 
 
@@ -96,7 +96,7 @@ Download [zip file](https://github.com/ORCID/double-orcid-auth-node/archive/mast
         cd Downloads/double-orcid-auth-node-master/pub-pals
 
 ### 5. Install client app node dependencies
-Type the following command into the command prompt and hit return. This step only needs to be completed the first time the application is run.
+Type the following command into the command prompt and hit return.
 
        npm install 
 
@@ -148,7 +148,7 @@ Depending on how you downloaded and unzipped the project, type the following com
         cd Downloads/double-orcid-auth-node-master/doi-dudes
 
 ### 11. Install client app node dependencies. 
-Type the following command into the command prompt and hit return. This step only needs to be completed the first time the application is run.
+Type the following command into the command prompt and hit return.
 
        npm install 
 
