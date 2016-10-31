@@ -38,7 +38,7 @@ Click the "Yes, grant permission take me to DOI Dudes" button. You'll be taken t
 ###7. Grant permission to DOI Dudes
 When you click Authorize, DOI Dudes will get your ORCID iD and permission to create and update activities on your ORCID record.
 
-![Click Authorize](/readme_images/authorize.png "Click authorize")
+![Click Authorize](/readme_images/doidudes_authorize.png "Click authorize")
 
 ###8. Return to the DOI Dudes redirect
 
@@ -96,7 +96,7 @@ Download [zip file](https://github.com/ORCID/double-orcid-auth-node/archive/mast
         cd Downloads/double-orcid-auth-node-master/pub-pals
 
 ### 5. Install client app node dependencies
-Type the following command into the command prompt and hit return. This step only needs to be completed the first time the application is run.
+Type the following command into the command prompt and hit return.
 
        npm install 
 
@@ -148,7 +148,7 @@ Depending on how you downloaded and unzipped the project, type the following com
         cd Downloads/double-orcid-auth-node-master/doi-dudes
 
 ### 11. Install client app node dependencies. 
-Type the following command into the command prompt and hit return. This step only needs to be completed the first time the application is run.
+Type the following command into the command prompt and hit return.
 
        npm install 
 
