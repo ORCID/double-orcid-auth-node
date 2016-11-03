@@ -1,17 +1,13 @@
-var express = require('express'), 
+var
   // load config from file
   config = require('./helpers/config'),
+  createServer = require("auto-sni"),
+  express = require('express'),
+  fs = require('fs'),
   httpLogging = require('./helpers/http-logging'),
   querystring = require("querystring"),
-  fs = require('fs'),
-  https = require('https'),
-  session = require('express-session'),
-  request = require('request');
-
-var ssl_options = {
-  key: fs.readFileSync('./helpers/sample_server.key'),
-  cert: fs.readFileSync('./helpers/sample_server.cert'),
-};
+  request = require('request'),
+  session = require('express-session');
 
 // Init express
 var app = express();
@@ -23,9 +19,21 @@ app.use(session({
     saveUninitialized: true,
     cookie: {httpOnly: true, secure: true},  
 }));
-secureServer = https.createServer(ssl_options, app);
-secureServer.listen(config.PORT, config.SERVER_IP, function () { // Start express
-  console.log('server started on ' + config.PORT);
+
+secureServer = createServer({
+  email: config.LETSENCRYPT_ISSUES_EMAIL, // Emailed when certificates expire.
+  agreeTos: true, // Required for letsencrypt.
+  debug: config.AUTO_SNI_DEBUG, // Add console messages and uses staging LetsEncrypt server. (Disable in production)
+  domains: [["localhost","www.localhost"]], // List of accepted domain names. (You can use nested arrays to register bundles with LE).
+  forceSSL: true, // Make this false to disable auto http->https redirects (default true).
+  redirectCode: 301, // If forceSSL is true, decide if redirect should be 301 (permanent) or 302 (temporary). Defaults to 302
+  ports: {
+    http: config.PORT_HTTP, // Optionally override the default http port.
+    https: config.PORT_HTTPS // Optionally override the default https port.
+  }
+}, app);
+secureServer.listen(config.PORT_HTTPS, config.SERVER_IP, function () { // Start express
+  console.log('server started on ' + config.PORT_HTTPS);
 });
 
 app.get('/', function(req, res) { // Index page 
