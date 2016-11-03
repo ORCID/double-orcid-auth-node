@@ -8,7 +8,8 @@
     "global-request-logger": "^0.0.1",
     "express": "^4.12.4",
     "express-session": "^1.14.1",
-    "request": "^2.57.0"
+    "request": "^2.57.0",
+    "auto-sni": "^1.5.1"
   },
   "repository": {
     "type": "git",
