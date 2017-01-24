@@ -5,7 +5,7 @@ This demo shows a case where:
 
 - DOI Dudes already has permission to access the user's ORCID record (ex: granted while submitting a manuscript to another journal) 
 - Confirmation screen is shown after user grants permission to Publisher Pals prompting user to grant permission to DOI Dudes
-- Confirmation screen is shown after user grants permission to DOI Dudes
+- No confirmation screen is shown after user grants permission to DOI Dudes - DOI Dudes immediately closes permission request window automatically
 
 ###1. Connect iD to Publisher Pals
 On the Publisher Pals site, user clicks **Create or Connect your ORCID iD**
@@ -28,11 +28,8 @@ After granting access to Publisher Pals, the user is directed to a screen showin
 
 ![Screen after granting permission to Pub Pals](readme_images/pubpals_redirect.png "Redirect back to Pub Pals")
 
-###4. DOI Dudes confirmation message
-
-Since DOI Dudes already has permission to access the user's ORCID record, no addtional request is displayed. Instead, the user is sent directly to a screen showing a confirmation message. This page is hosted by DOI Dudes, and DOI Dudes determines its content. This window should be configured to close automatically after several seconds.
-
-![DOI Dudes Thank you](readme_images/doidudes_redirect.png "You have now granted DOI Dudes access to your record")
+###4. Redirect to DOI Dudes authorization (not visible to user)
+User is directed to DOI Dudes' permission request, but since DOI Dudes already has permission to access the user's ORCID record, no request screen is displayed. Instead, an authorization code is returned to DOI Dudes. Since DOI Dudes knows they already permission to access this user's ORCID record, they close the screen automatically without showing a message.
 
 ###5. User returns to Publisher Pals submission system 
 The user is returned to Publisher Pals to complete the submission process. Both Publisher Pals and DOI Dudes have permission to access the user's ORCID record. Publisher Pals uses its access immediately to include the user's ORCID iD with the submission; DOI Dudes uses its access to post the work to the user's ORCID record once it is published. 
