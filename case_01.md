@@ -1,3 +1,4 @@
+[< Back to user workflows list](user_flows.md#user-flows) 
 # Case 1: Neither app has existing permission (with Publisher Pals redirect screen)
 
 This demo shows a case where:
@@ -43,4 +44,6 @@ After granting access to DOI Dudes, the user is directed to a screen showing a c
 The user is returned to Publisher Pals to complete the submission process. Both Publisher Pals and DOI Dudes have permission to access the user's ORCID record. Publisher Pals uses its access immediately to include the user's ORCID iD with the submission; DOI Dudes uses its access to post the work to the user's ORCID record once it is published. 
 
 ![Completed submission form](readme_images/pubpals_complete.png "Completed Pub Pals submission form")
+
+[< Back to user workflows list](user_flows.md#user-flows) 
 

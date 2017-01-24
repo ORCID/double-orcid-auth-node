@@ -1,3 +1,4 @@
+[< Back to user workflows list](user_flows.md#user-flows) 
 # Case 4: DOI Dudes already has permission (without Publisher Pals redirect screen)
 
 This demo shows a case where:
@@ -29,3 +30,4 @@ The user is returned to Publisher Pals to complete the submission process. Both 
 
 ![Completed submission form](readme_images/pubpals_complete.png "Completed Pub Pals submission form")
 
+[< Back to user workflows list](user_flows.md#user-flows) 
