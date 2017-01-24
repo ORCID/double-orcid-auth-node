@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>Double ORCID OAuth2 NodeJS</title>
+		<link href='//fonts.googleapis.com/css?family=Source+Code+Pro:300' rel='stylesheet' type='text/css'>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="public/css/style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="http://orcid.org/sites/default/files/images/orcid_16x16.png">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="crossorigin="anonymous">
+    </script>
+	</head>
+  	<body>
+    <div class="container-narrow">
+      <div class="alert alert-warning">
+        <p>
+        This sample sandbox client application demonstrates a simple client application interacting with <a href="http://members.orcid.org/api/oauth2">ORCID OAuth2</a> service. For a comprehensive overview visit <a href="http://members.orcid.org/api" target="member_api">http://members.orcid.org/api</a>.
+        </p>
+     </div>
+     <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="/">Manuscript Submission</a></li>
+          <li><a href="http://orcid.org" target="_blank">Journal Home</a></li>
+          <li><a href="https://orcid.org/help/contact-us" target="_blank">Help</a></li>
+        </ul>
+        <img src="public/img/pub-pals.svg" alt="Publisher Pals" width="200px" />
+      </div>
+      <hr>
+      <h3>Welcome to the Publisher Pals Submission System!</h3>
+      <p>Please enter your information below.</p>
+      <hr>
+      <form>
+          <div class="form-group">
+              <label for="inputFirstName">First name</label>
+              <input type="text" class="form-control" id="inputFirstName" placeholder="First name">
+          </div>
+          <div class="form-group">
+              <label for="inputLastName">Last name</label>
+              <input type="text" class="form-control" id="inputLastName" placeholder="Last name">
+          </div>
+          <div class="form-group">
+              <label for="inputEmail">Email address</label>
+              <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+          </div>
+          <div class="form-group">
+              <label for="orcidId">ORCID iD</label><br>
+              <div class="col-xs-6">
+                  <input name="orcidId" class="form-control" type="text" placeholder="http://orcid.org/0000-0002-8278-2338" readonly>
+              </div>
+              <!--<a class="btn btn-default popup" id="oauth">
+                  <img id="orcid-id-logo" src="http://orcid.org/sites/default/files/images/orcid_16x16.png" width='16' height='16' alt="ORCID logo" /> Create or Connect your ORCID iD
+              </a>-->
+              <br><br>
+            <p style="clear: both; font-size: .9em;"><em>Publisher Pals works with <a href="https://localhost:9443" target="_blank">DOI Dudes</a> to automatically add new publications to your ORCID record. You've granted permission to allow DOI Dudes to update your ORCID record - you can revoke this permission at any time in your <a herf="#">ORCID account settings</a></em></p>
+              <br>
+              <!--<label>Update ORCID automatically?</label>
+              <div class="alert alert-info alert-info-gray" id="orcid-info">
+                  <p>
+                  <a href="https://orcid.org/about" target="_blank">ORCID</a> provides a persistent digital identifier that distinguishes you from other researchers. Publisher Pals uses ORCID iDs to make sure that your publications are correctly attributed to you, and not to another author with a similar name.
+                  </p>
+                  <p>
+                  Publisher Pals works with <a href="https://localhost:9443" target="_blank">DOI Dudes</a> to automatically add your new publications to your ORCID record. Click the button below to give DOI Dudes permission to update your ORCID record.
+                  </p>
+                  <br>
+                  <p><a class="btn btn-primary" href="#">Allow DOI Dudes to update my ORCID record</a></p>
+              </div>-->
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    <hr>
+    <div class="footer">
+          Get the code & learn how to deploy this example locally at: <a href="https://github.com/ORCID/double-orcid-auth-node" target="_blank">github.com/ORCID/double-orcid-auth-node</a>
+      </div>
+  </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
+</html>
