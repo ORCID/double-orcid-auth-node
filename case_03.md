@@ -1,10 +1,11 @@
 [< Back to user workflows list](user_flows.md#user-flows) 
-# Case 3: DOI Dudes already has permission (with Publisher Pals redirect screen)
+# Case 3: DOI Dudes already has permission (with confirmation screens)
 
 This demo shows a case where:
 
 - DOI Dudes already has permission to access the user's ORCID record (ex: granted while submitting a manuscript to another journal) 
-- A redirect screen is shown after user grants permission to Publisher Pals that provides info about the relationship between Publisher Pals and DOI Dudes
+- Confirmation screen is shown after user grants permission to Publisher Pals prompting user to grant permission to DOI Dudes
+- Confirmation screen is shown after user grants permission to DOI Dudes
 
 ###1. Connect iD to Publisher Pals
 On the Publisher Pals site, user clicks **Create or Connect your ORCID iD**

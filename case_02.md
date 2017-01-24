@@ -1,10 +1,11 @@
 [< Back to user workflows list](user_flows.md#user-flows) 
-# Case 2: Neither app has existing permission (without Publisher Pals redirect screen)
+# Case 2: Neither app has existing permission (without confirmation screens)
 
 This demo shows a case where:
 
 - Neither Publisher Pals nor DOI Dudes currently has permission to access the user's ORCID record
-- No redirect screen is shown after user grants permission to Publisher Pals - user is sent directly to DOI Dudes authorization screen
+- No confirmation screen is shown after user grants permission to Publisher Pals - user is sent directly to DOI Dudes authorization screen
+- No confirmation screen is shown after user grants permission to DOI Dudes - DOI Dudes immediately closes permission request window automatically
 
 ###1. Connect iD to Publisher Pals
 On the Publisher Pals site, user clicks **Create or Connect your ORCID iD** 
@@ -26,14 +27,8 @@ On the Publisher Pals site, user clicks **Create or Connect your ORCID iD**
 
 ![Click Authorize](readme_images/doidudes_permission.png "DOI Dudes authorization screen")
 
-###4. DOI Dudes confirmation message
-
-After granting access to DOI Dudes, the user is directed to a screen showing a confirmation message. This page is hosted by DOI Dudes, and DOI Dudes determines its content. This window should be configured to close automatically after several seconds.
-
-![DOI Dudes Thank you](readme_images/doidudes_redirect.png "You have now granted DOI Dudes access to your record")
-
-###5. User returns to Publisher Pals submission system 
-The user is returned to Publisher Pals to complete the submission process. Both Publisher Pals and DOI Dudes have permission to access the user's ORCID record. Publisher Pals uses its access immediately to include the user's ORCID iD with the submission; DOI Dudes uses its access to post the work to the user's ORCID record once it is published. 
+###4. User returns to Publisher Pals submission system 
+DOI Dudes closes the permission request pop-up window without showing a message, leaving the user to complete the Publisher Pals submission process. Both Publisher Pals and DOI Dudes have permission to access the user's ORCID record. Publisher Pals uses its access immediately to include the user's ORCID iD with the submission; DOI Dudes uses its access to post the work to the user's ORCID record once it is published. 
 
 ![Completed submission form](readme_images/pubpals_complete.png "Completed Pub Pals submission form")
 

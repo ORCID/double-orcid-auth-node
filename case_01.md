@@ -1,10 +1,11 @@
 [< Back to user workflows list](user_flows.md#user-flows) 
-# Case 1: Neither app has existing permission (with Publisher Pals redirect screen)
+# Case 1: Neither app has existing permission (with confirmation screens)
 
 This demo shows a case where:
 
 - Neither Publisher Pals nor DOI Dudes currently has permission to access the user's ORCID record
-- A redirect screen is shown after user grants permission to Publisher Pals that provides info about the relationship between Publisher Pals and DOI Dudes
+- Confirmation screen is shown after user grants permission to Publisher Pals prompting user to grant permission to DOI Dudes
+- Confirmation screen is shown after user grants permission to DOI Dudes
 
 ###1. Connect iD to Publisher Pals
 On the Publisher Pals site, user clicks **Create or Connect your ORCID iD**

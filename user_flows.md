@@ -16,13 +16,13 @@ One possibility involves presenting users with permission requests from both sys
 
 The cases below show variations on this "double authorization" flow (from the user perspective), using Publisher Pals and DOI Dudes to represent the publisher and DOI registration agency systems. 
 
-[Case 1: Neither app has existing permission (with Publisher Pals redirect screen)](case_01.md)
+[Case 1: Neither app has existing permission (with confirmation screens)](case_01.md)
 
-[Case 2: Neither app has existing permission (without Publisher Pals redirect screen)](case_02.md)
+[Case 2: Neither app has existing permission (without confirmation screens)](case_02.md)
 
-[Case 3: DOI Dudes already has permission (with Publisher Pals redirect screen)](case_03.md)
+[Case 3: DOI Dudes already has permission (with confirmation screens)](case_03.md)
 
-[Case 4: DOI Dudes already has permission (without Publisher Pals redirect screen)](case_04.md)
+[Case 4: DOI Dudes already has permission (without confirmation screens)](case_04.md)
 
 [Case 5: Neither app has existing permission (separate buttons)](case_05.md)
 

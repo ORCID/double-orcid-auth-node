@@ -5,6 +5,7 @@ This demo shows a case where:
 
 - Neither Publisher Pals nor DOI Dudes currently has permission to access the user's ORCID record
 - After user grants permission to Publisher Pals, a button appears on the Published Pals site allowing user to grant permission to DOI Dudes
+- Confirmation screen is shown after user grants permission to DOI Dudes - DOI Dudes closes this screen automatically after short timeout (optional: DOI Dudes could instead close the permission request window immediately).
 
 ###1. Connect iD to Publisher Pals
 On the Publisher Pals site, user clicks **Create or Connect your ORCID iD**
@@ -31,9 +32,9 @@ After granting permission to Publisher Pals, the user is returned to Publisher P
 
 ![Click Authorize](readme_images/doidudes_permission.png "DOI Dudes authorization screen")
 
-###5. DOI Dudes confirmation message
+###5. (Optional) DOI Dudes confirmation message
 
-After granting access to DOI Dudes, the user is directed to a screen showing a confirmation message. This page is hosted by DOI Dudes, and DOI Dudes determines its content. This window should be configured to close automatically after several seconds.
+After granting access to DOI Dudes, the user is directed to a screen showing a confirmation message. This page is hosted by DOI Dudes, and DOI Dudes determines its content. This window should be configured to close automatically after several seconds. This screen is optional; DOI Dudes could instead close the permission request window immediately without displaying a message.
 
 ![DOI Dudes Thank you](readme_images/doidudes_redirect.png "You have now granted DOI Dudes access to your record")
 
