@@ -20,7 +20,7 @@ The cases below show variations on this "double authorization" flow (from the us
 
 [Case 2: Neither app has existing permission (without confirmation screens)](case_02.md)
 
-[Case 3: DOI Dudes already has permission (with Publisher Pals confirmation screens)](case_03.md)
+[Case 3: DOI Dudes already has permission (with confirmation screens)](case_03.md)
 
 [Case 4: DOI Dudes already has permission (without confirmation screens)](case_04.md)
 
